@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+    <record id="svis_contrat_renewer_form_view" model="ir.ui.view">
+              <field name="name">svis_contrat_renewer_form_view.form</field>
+              <field name="model">svis.contrat.renewer</field>
+              <field name="type">form</field>
+              <field name="arch" type="xml">
+                  <form>
+                      <sheet>
+                      <!--<header> 
+                        <field name="state" widget="statusbar" />
+                        <button name ="generate" string="generate payment plan" type="object" class="oe_highlight"/>
+                      </header>-->
+                          <group>
+                              <separator string="Contrat" colspan="4" />
+                              <group> 
+                                <field name="date" />                               
+                               </group>
+                              <group>   
+                                <field name="contract"/>                                   
+                                <field name="customer" />
+                                <field name="contrat_t" />
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="date_invoice"/>
+                                
+                              </group>
+                          </group>
+                          <separator string="Contra Renewer" colspan="4" />  
+                          <group>
+                            <field name="renewer_star"/>                                   
+                            <field name="renewer_end" />
+                            <field name="renewer_invoice" />
+                            <field name="renewal_reason"/>
+                          </group>
+                      </sheet>  
+            
+                  </form>
+              </field>
+          </record>
+
+          <record id="svis_contract_renewer_tree_view" model="ir.ui.view">
+            <field name="name">svis_contract_renewer_tree_view.tree</field>
+            <field name="model">svis.contrat.renewer</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="contract"/>
+                    <field name="customer"/>
+                    <field name="contrat_t" />
+                    <field name="date_start" />
+                    <field name="date_end"/>
+                    <field name="date_invoice"/>
+                    <field name="renewal_reason"/>
+                </tree>
+            </field>
+        </record>
+
+          
+          <record id="action_svis_contrat_renewer" model="ir.actions.act_window">
+              <field name = "type">ir.actions.act_window</field>
+              <field name="name">Contrat</field>
+              <field name="res_model">svis.contrat.renewer</field>
+              <field name="view_mode">tree,form</field>                  
+          </record>
+
+          <menuitem id="svis_cntrat_re_menu" parent="svis_contrat_menu_root" name="Contrat Renewer"
+            sequence="2"/>
+          <menuitem id="contrat_renewer_svis" parent="svis_cntrat_re_menu" name="Contrat Renewer"
+            action="action_svis_contrat_renewer" sequence="1"/>
+
+    </data>
+  </odoo>

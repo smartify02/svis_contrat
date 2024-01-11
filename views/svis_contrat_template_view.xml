@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+    <record id="svis_contrat_template_form_view" model="ir.ui.view">
+              <field name="name">svis_contrat_template_form_view.form</field>
+              <field name="model">svis.contrat.template</field>
+              <field name="type">form</field>
+              <field name="arch" type="xml">
+                  <form>
+                     <sheet> 
+                            <group>
+                              <field name="name" />
+                              <field name="cag"/>
+                             </group>
+                             
+                      </sheet>  
+            
+                  </form>
+              </field>
+          </record>
+
+          <record id="svis_contrat_template_tree_view" model="ir.ui.view">
+            <field name="name">svis_contrat_template_tree_view.tree</field>
+            <field name="model">svis.contrat.template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="cag"/> 
+                </tree>
+            </field>
+        </record>
+
+          
+          <record id="action_svis_contrat_template" model="ir.actions.act_window">
+              <field name = "type">ir.actions.act_window</field>
+              <field name="name">Contrat template</field>
+              <field name="res_model">svis.contrat.template</field>
+              <field name="view_mode">tree,form</field>                  
+          </record>
+
+          
+          <menuitem id="contrat_svis_template" parent="svis_cntrat_menu" name="Contrat Template"
+            action="action_svis_contrat_template" sequence="3"/>
+
+    </data>
+  </odoo>

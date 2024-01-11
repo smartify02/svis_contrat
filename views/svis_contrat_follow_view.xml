@@ -1,0 +1,82 @@
+<odoo>
+    <data>
+    <record id="svis_contrat_follow_form_view" model="ir.ui.view">
+              <field name="name">svis_contrat_follow_form_view.form</field>
+              <field name="model">svis.contrat.follow</field>
+              <field name="type">form</field>
+              <field name="arch" type="xml">
+                  <form>
+                      <sheet>
+                     <!-- <header>
+                        <field name="state" widget="statusbar" clickable="1"/>
+                        <button name ="generate_payment_plan" string="generate payment plan" type="object" class="oe_highlight"/>
+                        <button name="action_cancel" string="Cancel" type="object"
+                                attrs="{'invisible': [('state', 'not in', ('draft'))]}"/>
+                      </header>-->
+                          <group>
+                              <group>
+                                <field name="name"/>
+                                <field name="product" />
+                                <field name="description"/>
+                                <field name="analytic"/>
+                                <field name="responsable"/>
+                               </group>
+                              <group>   
+                                <field name="quantity"/>                                   
+                                <field name="unit_of" />
+                                <field name="auto_price" />
+                              </group>
+                          </group>
+
+                          <group>
+                            <separator colspan="4" />
+                            <group>
+                              <field name="unit_price" />
+                              <field name="sub_total"/>
+                             </group>
+                            <group>   
+                              <field name="end_date"/>                                   
+                               
+                            </group>
+                        </group>
+                      </sheet>  
+            
+                  </form>
+              </field>
+          </record>
+
+          <record id="svis_contrat_follow_tree_view" model="ir.ui.view">
+            <field name="name">svis_contrat_follow_tree_view.tree</field>
+            <field name="model">svis.contrat.follow</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="product"/>
+                    <field name="description"/>
+                    <field name="description"/>
+                    <field name="responsable" />
+                    <field name="quantity" />
+                    <field name="unit_of"/>
+                    <field name="auto_price"/>
+                    <field name="unit_price"/>
+                    <field name="sub_total"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+          
+          <record id="action_svis_contrat_follow" model="ir.actions.act_window">
+              <field name = "type">ir.actions.act_window</field>
+              <field name="name">Contrat</field>
+              <field name="res_model">svis.contrat.follow</field>
+              <field name="view_mode">tree,form</field>                  
+          </record>
+
+          
+          <menuitem id="contrat_svis_follow" parent="svis_cntrat_menu" name="Contrat followup"
+            action="action_svis_contrat_follow" sequence="2"/>
+
+    </data>
+  </odoo>

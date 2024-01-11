@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+svis_contrat_access_right,svis_contrat_access,model_svis_contrat,base.group_user,1,1,1,1
+svis_contrat_follower_access_right,svis_contrat_follow_access,model_svis_contrat_follow,base.group_user,1,1,1,1
+svis_contrat_renewer_access_rightµ,svis_contrat_renewer_right,model_svis_contrat_renewer,base.group_user,1,1,1,1
+svis_contrat_template_access_right,svis_contrat_template_right,model_svis_contrat_template,base.group_user,1,1,1,1
